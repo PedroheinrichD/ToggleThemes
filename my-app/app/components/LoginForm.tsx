@@ -11,13 +11,12 @@ function LoginForm() {
   }
 
   return (
-  
       <form
         onSubmit={handleFormSubmit}
         className={
           ThemeCtx?.toggle
-            ? "mx-auto max-w-sm  mt-10 p-8 bg-[#0d0d0df5] rounded-xl shadow-md space-y-4 "
-            : "mx-auto max-w-sm  mt-10 p-8 bg-white rounded-xl shadow-md space-y-4 "
+            ? "mx-auto max-w-sm mt-10 p-8 bg-[#0d0d0df5] rounded-xl shadow-md space-y-4 transition-colors duration-200"
+            : "mx-auto max-w-sm mt-10 p-8 bg-white rounded-xl shadow-md space-y-4 transition-colors duration-200 "
         }
       >
         <div className="flex justify-between">
@@ -33,8 +32,8 @@ function LoginForm() {
           <Moon
             className={
               ThemeCtx?.toggle
-                ? `cursor-pointer fill-white`
-                : `cursor-pointer fill-gray-700`
+                ? `cursor-pointer fill-white -rotate-120 transition-transform duration-300`
+                : `cursor-pointer fill-gray-700 rotate-0 transition-transform duration-300`
             }
             onClick={ThemeCtx?.toggleThemes}
           />
@@ -97,7 +96,6 @@ function LoginForm() {
           Entrar
         </button>
       </form>
-  
   );
 }
 
