@@ -1,4 +1,4 @@
 export type themeContextType = {
-    toggle: boolean,
+    Theme: string,
     toggleThemes: () => void
 }

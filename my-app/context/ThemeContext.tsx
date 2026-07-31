@@ -1,18 +1,28 @@
+"use client"
 import { themeContextType } from "@/types/ThemeContext";
-import { createContext, PropsWithChildren, useContext, useState } from "react";
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 
 const toggleThemeContext = createContext<themeContextType | null >(null)
+const STORAGE_KEY = '@toggleThemes'
+
 
 export function ThemeContext({ children }: PropsWithChildren) {
-    const [toggle, setToggle] = useState(false) //state para trocar 
+    const [Theme, setToggle] = useState(
+        localStorage.getItem(STORAGE_KEY) || 'light'
+    ) //state para trocar 
 
     function toggleThemes(){ //function para inverter valor do state
-        setToggle(!toggle)
+        setToggle(Theme === 'dark' ? 'light' : 'dark');
     }
+   
+
+    useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, Theme)
+    }, [Theme])
 
     return(
         <section>
-            <toggleThemeContext.Provider value={{toggle, toggleThemes}} >
+            <toggleThemeContext.Provider value={{Theme, toggleThemes}} >
               {children}  
             </toggleThemeContext.Provider>
         </section>

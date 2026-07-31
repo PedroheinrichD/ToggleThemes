@@ -14,7 +14,7 @@ function LoginForm() {
       <form
         onSubmit={handleFormSubmit}
         className={
-          ThemeCtx?.toggle
+          ThemeCtx?.Theme === 'dark'
             ? "mx-auto max-w-sm mt-10 p-8 bg-[#0d0d0df5] rounded-xl shadow-md space-y-4 transition-colors duration-200"
             : "mx-auto max-w-sm mt-10 p-8 bg-white rounded-xl shadow-md space-y-4 transition-colors duration-200 "
         }
@@ -22,7 +22,7 @@ function LoginForm() {
         <div className="flex justify-between">
           <h2
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? "text-xl font-semibold text-white"
                 : "text-xl font-semibold text-gray-800"
             }
@@ -31,7 +31,7 @@ function LoginForm() {
           </h2>
           <Moon
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? `cursor-pointer fill-white -rotate-120 transition-transform duration-300`
                 : `cursor-pointer fill-gray-700 rotate-0 transition-transform duration-300`
             }
@@ -43,7 +43,7 @@ function LoginForm() {
           <label
             htmlFor="email"
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? "block text-sm font-medium text-white mb-1"
                 : "block text-sm font-medium text-gray-700 mb-1"
             }
@@ -57,7 +57,7 @@ function LoginForm() {
             required
             placeholder="seu@email.com"
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
                 : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             }
@@ -68,7 +68,7 @@ function LoginForm() {
           <label
             htmlFor="password"
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? "block text-sm font-medium text-white mb-1"
                 : "block text-sm font-medium text-gray-700 mb-1"
             }
@@ -82,7 +82,7 @@ function LoginForm() {
             required
             placeholder="......"
             className={
-              ThemeCtx?.toggle
+              ThemeCtx?.Theme === 'dark'
                 ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
                 : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             }
@@ -91,7 +91,7 @@ function LoginForm() {
 
         <button
           type="submit"
-          className={ThemeCtx?.toggle ? "w-full bg-sky-400 py-2 rounded-md text-white" :"w-full bg-sky-800 py-2 rounded-md text-white"}
+          className={ThemeCtx?.Theme ? "w-full bg-sky-400 py-2 rounded-md text-white" :"w-full bg-sky-800 py-2 rounded-md text-white"}
         >
           Entrar
         </button>
