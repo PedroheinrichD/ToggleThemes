@@ -1,6 +1,6 @@
 "use client";
 import { useThemesContext } from "@/context/ThemeContext";
-import { Moon } from "lucide-react";
+import { Lock, Moon, User2 } from "lucide-react";
 import { SyntheticEvent } from "react";
 
 function LoginForm() {
@@ -50,18 +50,24 @@ function LoginForm() {
           >
             E-mail
           </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            placeholder="seu@email.com"
-            className={
-              ThemeCtx?.Theme === 'dark'
-                ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
-                : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-            }
-          />
+          <div className="relative">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="E-mail"
+                className={
+                  ThemeCtx?.Theme === 'dark'
+                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
+                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                }
+              />
+              <User2 className={ThemeCtx?.Theme === 'dark' 
+              ? "absolute top-2 left-2 w-5 stroke-[#438CF9]"
+              : "absolute top-2 left-2 w-5"}
+              />
+          </div>
         </div>
 
         <div>
@@ -75,23 +81,31 @@ function LoginForm() {
           >
             Senha
           </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            required
-            placeholder="......"
-            className={
-              ThemeCtx?.Theme === 'dark'
-                ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
-                : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-            }
-          />
+          <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                placeholder="Senha"
+                className={
+                  ThemeCtx?.Theme === 'dark'
+                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
+                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                }
+              />
+              <Lock className={ThemeCtx?.Theme === 'dark' 
+              ? "absolute top-2 left-2 w-5 stroke-[#438CF9]"
+              : "absolute top-2 left-2 w-5"}
+              />   
+          </div>
         </div>
 
         <button
           type="submit"
-          className={ThemeCtx?.Theme ? "w-full bg-sky-400 py-2 rounded-md text-white" :"w-full bg-sky-800 py-2 rounded-md text-white"}
+          className={ThemeCtx?.Theme === 'dark'
+            ?"w-full bg-[#438CF9] shadow-[0_0_15px_rgba(67,140,249,0.4)] hover:shadow-[0_0_10px_rgba(67,140,249,0.6)] transition-shadow duration-300 py-2 rounded-md text-white cursor-pointer" 
+            :"w-full bg-sky-500 shadow-[0_0_15px_rgba(14,165,233,0.4)] hover:shadow-[0_0_10px_rgba(14,165,233,0.6)] transition-shadow duration-300 py-2 rounded-md text-white cursor-pointer"}
         >
           Entrar
         </button>
