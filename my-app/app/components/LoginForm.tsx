@@ -106,6 +106,16 @@ function LoginForm() {
           </div>
         </div>
 
+        <a 
+          href="#"
+          className={ThemeCtx?.Theme === 'dark' 
+            ? "text-[13px] text-[#438CF9] hover:text-[#4a8bec] block text-right"
+            : "text-[13px] text-sky-500 hover:text-sky-600 block text-right" 
+          }
+        >
+          Esqueceu a senha?
+        </a>
+
         <button
           type="button"
           className={
