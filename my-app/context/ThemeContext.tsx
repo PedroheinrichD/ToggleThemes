@@ -2,7 +2,7 @@
 import { themeContextType } from "@/types/ThemeContext";
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 
-const toggleThemeContext = createContext<themeContextType | null >(null)
+const toggleThemeContext = createContext<themeContextType | null>(null)
 const STORAGE_KEY = '@toggleThemes'
 
 
@@ -11,19 +11,25 @@ export function ThemeContext({ children }: PropsWithChildren) {
         localStorage.getItem(STORAGE_KEY) || 'light'
     ) //state para trocar 
 
-    function toggleThemes(){ //function para inverter valor do state
+    function toggleThemes() { //function para inverter valor do state
         setToggle(Theme === 'dark' ? 'light' : 'dark');
     }
-   
+
 
     useEffect(() => {
+        if (Theme === 'dark') {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
         localStorage.setItem(STORAGE_KEY, Theme)
     }, [Theme])
 
-    return(
+    return (
         <section>
-            <toggleThemeContext.Provider value={{Theme, toggleThemes}} >
-              {children}  
+            <toggleThemeContext.Provider value={{ Theme, toggleThemes }} >
+                {children}
             </toggleThemeContext.Provider>
         </section>
     )
