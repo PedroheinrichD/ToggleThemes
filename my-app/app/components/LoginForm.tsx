@@ -19,6 +19,11 @@ function LoginForm() {
             : "mx-auto max-w-sm mt-10 p-8 bg-white rounded-xl shadow-md space-y-4 transition-colors duration-200 "
         }
       >
+        <div className={ThemeCtx?.Theme === 'dark' //barra azul no topo do form 
+          ? "h-1 w-8 rounded bg-sky-500" 
+          : "h-1 w-8 rounded bg-[#438CF9]"
+        }>
+        </div>
         <div className="flex justify-between">
           <h2
             className={
@@ -27,7 +32,7 @@ function LoginForm() {
                 : "text-xl font-semibold text-gray-800"
             }
           >
-            Entrar
+            Bem-vindo!
           </h2>
           <Moon
             className={
@@ -59,8 +64,8 @@ function LoginForm() {
                 placeholder="E-mail"
                 className={
                   ThemeCtx?.Theme === 'dark'
-                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
-                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#438CF9] focus:border-transparent placeholder:text-gray-400 text-white"
+                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
                 }
               />
               <User2 className={ThemeCtx?.Theme === 'dark' 
@@ -90,8 +95,8 @@ function LoginForm() {
                 placeholder="Senha"
                 className={
                   ThemeCtx?.Theme === 'dark'
-                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent placeholder:text-gray-400 text-white"
-                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    ? "w-full px-10 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#438CF9] focus:border-transparent placeholder:text-gray-400 text-white"
+                    : "w-full px-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
                 }
               />
               <Lock className={ThemeCtx?.Theme === 'dark' 
